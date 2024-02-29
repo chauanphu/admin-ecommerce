@@ -1,0 +1,137 @@
+@import "./variables.scss";
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 245px;
+  background-color: $color-primary-dark;
+  color: $color-primary-dark;
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  text-align: center; /* added */
+  padding-top: 2rem;
+  color: white;
+  &.open {
+    transform: translateX(0);
+  }
+  &.close {
+    transform: translateX(-245px);
+  }
+  .bottom {
+    position: static;
+    bottom: 1em;
+    width: 100%;
+    // Add styling for button
+    a {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // Add left and right margins
+      margin-left: 1em;
+      margin-right: 1em;
+      background-color: $color-primary;
+      border: none;
+      border-radius: 10px;
+      padding: 0.5em 1em;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        // Set image color to white
+      }
+    }
+    // Add space between buttons
+    a + a {
+      margin-top: 1em;
+    }
+  }
+}
+
+/* Styling for Link elements inside sidebar */
+.links {
+  .linkGroup {
+    padding-left: 1em;
+  }
+  span.link {
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    justify-content: space-between;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+
+    &.active {
+      background: $color-secondary-dark;
+      color: white;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      // Set image color to white
+      img {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)
+          brightness(100%) contrast(100%);
+      }
+    }
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      margin-left: 1em;
+      color: inherit;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 1em;
+    }
+  }
+}
+/* Styling for the cover */
+.sidebar__cover {
+  //
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.sidebar.open + .sidebar__cover {
+  display: block;
+}
+
+.toggleButton {
+  display: block;
+  button {
+    top: 1em;
+    left: 1em;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0.5em;
+    background-color: $color-primary;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
