@@ -2,15 +2,15 @@ import styles from 'styles/Pagniation.module.scss';
 
 interface Props {
     currentPage: number;
-    productsPerPage: number;
-    totalProducts: number;
+    itemPerPage: number;
+    totalItems: number;
     onPageChange: (pageNumber: number) => void;
   }
   
-const Pagination = ({ currentPage, productsPerPage, totalProducts, onPageChange }: Props) => {
+const Pagination = ({ currentPage, itemPerPage, totalItems, onPageChange }: Props) => {
     var pageNumbers: number[] = [];
   
-    for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(totalItems / itemPerPage); i++) {
       pageNumbers.push(i);
     }
   

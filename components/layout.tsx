@@ -8,9 +8,6 @@ export default function Layout({ children }) {
   return (
     // Set container width to 80% of the screen
     <>
-      <div className={sidebar_style.toggleButton}>
-        <button type="button" onClick={() => setOpenSidebar(true)}>Open Sidebar</button>
-      </div>
       <Sidebar
         open={true}
         categories={[]}
